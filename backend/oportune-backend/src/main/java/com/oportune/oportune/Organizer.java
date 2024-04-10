@@ -25,4 +25,10 @@ public class Organizer {
     private int id;
     private String name;
     private String description;
+
+    @ManyToOne
+    private Links links;
+
+    @ManyToOne
+    private Opportunity opportunity;
 }
