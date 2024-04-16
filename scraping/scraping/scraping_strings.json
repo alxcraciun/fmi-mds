@@ -1,0 +1,7 @@
+{
+  "hipo": {
+    "start_url": "https://www.hipo.ro/locuri-de-munca/cautajobfiltre/Toate-Domeniile/Toate-Orasele/Student--Absolvent,0-1-an-experienta/1",
+    "allow1": "cautajobfiltre/Toate-Domeniile/Toate-Orasele/Student--Absolvent,0-1-an-experienta/\\d+",
+    "allow2": "locuri_de_munca"
+  }
+}
