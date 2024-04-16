@@ -24,15 +24,15 @@ public class Bookmark {
             strategy = GenerationType.SEQUENCE
     )
     private int id;
-    @MapsId("classroomId")
+
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
     private User user;
 
-    @MapsId("teacherId")
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "opportunity_id")
     private Opportunity opportunity;
-
 
 }

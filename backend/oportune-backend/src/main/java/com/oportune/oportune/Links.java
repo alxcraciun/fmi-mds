@@ -30,7 +30,8 @@ public class Links {
     private Platform platform;
     private String url;
 
-    @OneToMany(mappedBy = "organizer", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "links", fetch = FetchType.LAZY)
     @JsonIgnore
     private List<Organizer> organizer;
+
 }

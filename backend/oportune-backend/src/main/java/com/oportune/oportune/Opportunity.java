@@ -1,6 +1,5 @@
 package com.oportune.oportune;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.oportune.oportune.enums.Status;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -8,9 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.awt.*;
 import java.util.Date;
-import java.util.List;
 
 @Getter
 @Setter
@@ -37,15 +34,13 @@ public class Opportunity {
     private Date end_date;
     private Status status;
 
-    @OneToMany(mappedBy = "opportunity", fetch = FetchType.LAZY)
-    @JsonIgnore
-    private List<Type> type;
+    @ManyToOne
+    private Type type;
 
-    @OneToMany(mappedBy = "opportunity", fetch = FetchType.LAZY)
-    @JsonIgnore
-    private List<Category> category;
+    @ManyToOne
+    private Category category;
 
-    @OneToMany(mappedBy = "organizer", fetch = FetchType.LAZY)
-    @JsonIgnore
-    private List<Organizer> organizer;
+    @ManyToOne
+    private Organizer organizer;
+
 }

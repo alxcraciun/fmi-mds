@@ -1,10 +1,13 @@
 package com.oportune.oportune;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.List;
 
 @Getter
 @Setter
@@ -29,6 +32,8 @@ public class Organizer {
     @ManyToOne
     private Links links;
 
-    @ManyToOne
-    private Opportunity opportunity;
+    @OneToMany(mappedBy = "organizer", fetch = FetchType.LAZY)
+    @JsonIgnore
+    private List<Opportunity> opportunity;
+
 }

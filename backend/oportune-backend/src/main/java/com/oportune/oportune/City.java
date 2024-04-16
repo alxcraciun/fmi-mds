@@ -1,10 +1,13 @@
 package com.oportune.oportune;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.List;
 
 @Getter
 @Setter
@@ -25,6 +28,8 @@ public class City {
     private int id;
     private String name;
 
-    @ManyToOne
-    private User user;
+    @OneToMany(mappedBy = "city", fetch = FetchType.LAZY)
+    @JsonIgnore
+    private List<User> users;
+
 }
