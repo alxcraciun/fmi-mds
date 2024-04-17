@@ -1,6 +1,7 @@
-package com.oportune.oportune;
+package com.oportune.oportune.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.oportune.oportune.model.Opportunity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -14,25 +15,25 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name="organizer")
-public class Organizer {
+@Table(name="type")
+public class Type {
     @Id
     @SequenceGenerator(
-            name="organizer_sequence",
+            name="type_sequence",
             allocationSize = 1
     )
     @GeneratedValue(
-            generator = "organizer_sequence",
+            generator = "type_sequence",
             strategy = GenerationType.SEQUENCE
     )
     private int id;
+
     private String name;
+
+    @Column(nullable = true)
     private String description;
 
-    @ManyToOne
-    private Links links;
-
-    @OneToMany(mappedBy = "organizer", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "type", fetch = FetchType.LAZY)
     @JsonIgnore
     private List<Opportunity> opportunity;
 

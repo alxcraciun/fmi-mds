@@ -1,4 +1,4 @@
-package com.oportune.oportune;
+package com.oportune.oportune.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
@@ -14,26 +14,22 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name="type")
-public class Type {
+@Table(name="city")
+public class City {
     @Id
     @SequenceGenerator(
-            name="type_sequence",
+            name="city_sequence",
             allocationSize = 1
     )
     @GeneratedValue(
-            generator = "type_sequence",
+            generator = "city_sequence",
             strategy = GenerationType.SEQUENCE
     )
     private int id;
-
     private String name;
 
-    @Column(nullable = true)
-    private String description;
-
-    @OneToMany(mappedBy = "type", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "city", fetch = FetchType.LAZY)
     @JsonIgnore
-    private List<Opportunity> opportunity;
+    private List<User> users;
 
 }

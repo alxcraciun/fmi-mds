@@ -1,6 +1,7 @@
-package com.oportune.oportune;
+package com.oportune.oportune.model;
 
 import com.oportune.oportune.enums.Role;
+import com.oportune.oportune.model.City;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -28,6 +29,8 @@ public class User {
     private String last_name;
     private String first_name;
     private String password;
+
+    @Enumerated(EnumType.STRING)
     private Role role;
 
     @Column(nullable = true)

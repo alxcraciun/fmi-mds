@@ -1,4 +1,4 @@
-package com.oportune.oportune;
+package com.oportune.oportune.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
@@ -7,32 +7,29 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name="bookmark")
-public class Bookmark {
+@Table(name="category")
+public class Category {
     @Id
     @SequenceGenerator(
-            name="bookmark_sequence",
+            name="category_sequence",
             allocationSize = 1
     )
     @GeneratedValue(
-            generator = "bookmark_sequence",
+            generator = "category_sequence",
             strategy = GenerationType.SEQUENCE
     )
     private int id;
+    private String name;
 
+    @OneToMany(mappedBy = "category", fetch = FetchType.LAZY)
     @JsonIgnore
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
-    private User user;
-
-    @JsonIgnore
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "opportunity_id")
-    private Opportunity opportunity;
+    private List<Opportunity> opportunity;
 
 }

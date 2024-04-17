@@ -1,4 +1,4 @@
-package com.oportune.oportune;
+package com.oportune.oportune.model;
 
 import com.oportune.oportune.enums.Status;
 import jakarta.persistence.*;
@@ -32,6 +32,8 @@ public class Opportunity {
     private String location;
     private Date start_date;
     private Date end_date;
+
+    @Enumerated(EnumType.STRING)
     private Status status;
 
     @ManyToOne

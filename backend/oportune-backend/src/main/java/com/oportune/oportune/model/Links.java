@@ -1,4 +1,4 @@
-package com.oportune.oportune;
+package com.oportune.oportune.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.oportune.oportune.enums.Platform;
@@ -27,7 +27,10 @@ public class Links {
             strategy = GenerationType.SEQUENCE
     )
     private int id;
+
+    @Enumerated(EnumType.STRING)
     private Platform platform;
+
     private String url;
 
     @OneToMany(mappedBy = "links", fetch = FetchType.LAZY)
