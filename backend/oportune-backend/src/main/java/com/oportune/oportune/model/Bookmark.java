@@ -16,7 +16,7 @@ import lombok.Setter;
 public class Bookmark {
     @Id
     @SequenceGenerator(
-            name="bookmark_sequence",
+            name = "bookmark_sequence",
             allocationSize = 1
     )
     @GeneratedValue(

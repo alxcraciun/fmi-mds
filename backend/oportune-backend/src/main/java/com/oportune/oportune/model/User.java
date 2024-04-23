@@ -37,7 +37,7 @@ public class User {
     private String photo;
 
     @Column(nullable = true)
-    private int phone;
+    private Integer phone;
 
     @ManyToOne
     private City city;
