@@ -2,8 +2,9 @@ from json import load as json_load
 
 from scrapy.spiders import CrawlSpider,Rule
 from scrapy.linkextractors import LinkExtractor
-
-with open("scraping/scraping_strings.json","r") as f:
+import os
+print(os.getcwd())
+with open(r"D:\Alex\oportune\scraping\scraping\spiders\scraping\scraping_strings.json","r") as f:
   strings = json_load(f)["hipo"]
 
 class HipoSpider(CrawlSpider):
