@@ -55,5 +55,6 @@ public class OpportunityService {
                 .orElseThrow(() -> new NoSuchElementException("Opportunity with ID " + id + " not found"));
         opportunityRepository.deleteById(id);
     }
+
 }
 

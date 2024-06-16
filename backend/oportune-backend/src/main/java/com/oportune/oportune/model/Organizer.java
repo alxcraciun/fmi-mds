@@ -1,8 +1,6 @@
 package com.oportune.oportune.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.oportune.oportune.model.Links;
-import com.oportune.oportune.model.Opportunity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -31,7 +29,7 @@ public class Organizer {
     private String name;
     private String description;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private Links links;
 
     @OneToMany(mappedBy = "organizer", fetch = FetchType.LAZY)

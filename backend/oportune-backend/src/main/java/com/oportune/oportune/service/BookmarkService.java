@@ -16,7 +16,6 @@ public class BookmarkService {
     private final UserRepository userRepository;
     private final OpportunityRepository opportunityRepository;
 
-
     @Autowired
     public BookmarkService(BookmarkRepository bookmarkRepository, UserRepository userRepository, OpportunityRepository opportunityRepository) {
         this.bookmarkRepository = bookmarkRepository;
