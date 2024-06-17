@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
-const AddJobPage = ({ addJobSubmit }) => {
+const AddOportunityPage = ({ addOportunitySubmit }) => {
   const [title, setTitle] = useState('');
   const [type, setType] = useState('Full-Time');
   const [location, setLocation] = useState('');
@@ -18,7 +18,7 @@ const AddJobPage = ({ addJobSubmit }) => {
   const submitForm = (e) => {
     e.preventDefault();
 
-    const newJob = {
+    const newOportunity = {
       title,
       type,
       location,
@@ -32,11 +32,11 @@ const AddJobPage = ({ addJobSubmit }) => {
       },
     };
 
-    addJobSubmit(newJob);
+    addOportunitySubmit(newOportunity);
 
-    toast.success('Job Added Successfully');
+    toast.success('Oportunity Added Successfully');
 
-    return navigate('/jobs');
+    return navigate('/oportunities');
   };
 
   return (
@@ -44,14 +44,14 @@ const AddJobPage = ({ addJobSubmit }) => {
       <div className='container m-auto max-w-2xl py-24'>
         <div className='bg-white px-6 py-8 mb-4 shadow-md rounded-md border m-4 md:m-0'>
           <form onSubmit={submitForm}>
-            <h2 className='text-3xl text-center font-semibold mb-6'>Add Job</h2>
+            <h2 className='text-3xl text-center font-semibold mb-6'>Add Oportunity</h2>
 
             <div className='mb-4'>
               <label
                 htmlFor='type'
                 className='block text-gray-700 font-bold mb-2'
               >
-                Job Type
+                Oportunity Type
               </label>
               <select
                 id='type'
@@ -70,7 +70,7 @@ const AddJobPage = ({ addJobSubmit }) => {
 
             <div className='mb-4'>
               <label className='block text-gray-700 font-bold mb-2'>
-                Job Listing Name
+                Oportunity Listing Name
               </label>
               <input
                 type='text'
@@ -95,7 +95,7 @@ const AddJobPage = ({ addJobSubmit }) => {
                 name='description'
                 className='border rounded w-full py-2 px-3'
                 rows='4'
-                placeholder='Add any job duties, expectations, requirements, etc'
+                placeholder='Add any oportunity duties, expectations, requirements, etc'
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
               ></textarea>
@@ -222,10 +222,10 @@ const AddJobPage = ({ addJobSubmit }) => {
 
             <div>
               <button
-                className='bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline'
+                className='bg-op-blue hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline'
                 type='submit'
               >
-                Add Job
+                Add Oportunity
               </button>
             </div>
           </form>
@@ -234,4 +234,4 @@ const AddJobPage = ({ addJobSubmit }) => {
     </section>
   );
 };
-export default AddJobPage;
+export default AddOportunityPage;

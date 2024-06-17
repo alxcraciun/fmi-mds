@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 
-const ViewAllJobs = () => {
+const ViewAllOportunities = () => {
   return (
     <section className='m-auto max-w-lg my-10 px-6'>
       <Link
-        to='/jobs'
+        to='/oportunities'
         className='block bg-black text-white text-center py-4 px-6 rounded-xl hover:bg-gray-700'
       >
         View All Opportunities
@@ -12,4 +12,4 @@ const ViewAllJobs = () => {
     </section>
   );
 };
-export default ViewAllJobs;
+export default ViewAllOportunities;
