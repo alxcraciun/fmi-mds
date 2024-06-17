@@ -12,10 +12,10 @@ const HomeCards = () => {
               Browse our opportunities and find and jumpstart your career today
             </p>
             <Link
-              to='/jobs'
+              to='/oportunities'
               className='inline-block bg-black text-white rounded-lg px-4 py-2 hover:bg-gray-700'
             >
-              Browse Jobs
+              Browse Oportunities
             </Link>
           </Card>
           <Card bg='bg-indigo-100'>
@@ -24,8 +24,8 @@ const HomeCards = () => {
               List your opportunity and find the perfect young leaders for the role
             </p>
             <Link
-              to='/add-job'
-              className='inline-block bg-indigo-500 text-white rounded-lg px-4 py-2 hover:bg-indigo-600'
+              to='/add-oportunity'
+              className='inline-block bg-op-blue text-white rounded-lg px-4 py-2 hover:bg-op-aqua'
             >
               Add Opportunity
             </Link>

@@ -2,19 +2,19 @@ import { useState } from 'react';
 import { useParams, useLoaderData, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
-const EditJobPage = ({ updateJobSubmit }) => {
-  const job = useLoaderData();
-  const [title, setTitle] = useState(job.title);
-  const [type, setType] = useState(job.type);
-  const [location, setLocation] = useState(job.location);
-  const [description, setDescription] = useState(job.description);
-  const [salary, setSalary] = useState(job.salary);
-  const [companyName, setCompanyName] = useState(job.company.name);
+const EditOportunityPage = ({ updateOportunitySubmit }) => {
+  const oportunity = useLoaderData();
+  const [title, setTitle] = useState(oportunity.title);
+  const [type, setType] = useState(oportunity.type);
+  const [location, setLocation] = useState(oportunity.location);
+  const [description, setDescription] = useState(oportunity.description);
+  const [salary, setSalary] = useState(oportunity.salary);
+  const [companyName, setCompanyName] = useState(oportunity.company.name);
   const [companyDescription, setCompanyDescription] = useState(
-    job.company.description
+    oportunity.company.description
   );
-  const [contactEmail, setContactEmail] = useState(job.company.contactEmail);
-  const [contactPhone, setContactPhone] = useState(job.company.contactPhone);
+  const [contactEmail, setContactEmail] = useState(oportunity.company.contactEmail);
+  const [contactPhone, setContactPhone] = useState(oportunity.company.contactPhone);
 
   const navigate = useNavigate();
   const { id } = useParams();
@@ -22,7 +22,7 @@ const EditJobPage = ({ updateJobSubmit }) => {
   const submitForm = (e) => {
     e.preventDefault();
 
-    const updatedJob = {
+    const updatedOportunity = {
       id,
       title,
       type,
@@ -37,11 +37,11 @@ const EditJobPage = ({ updateJobSubmit }) => {
       },
     };
 
-    updateJobSubmit(updatedJob);
+    updateOportunitySubmit(updatedOportunity);
 
-    toast.success('Job Updated Successfully');
+    toast.success('Oportunity Updated Successfully');
 
-    return navigate(`/jobs/${id}`);
+    return navigate(`/oportunities/${id}`);
   };
 
   return (
@@ -50,7 +50,7 @@ const EditJobPage = ({ updateJobSubmit }) => {
         <div className='bg-white px-6 py-8 mb-4 shadow-md rounded-md border m-4 md:m-0'>
           <form onSubmit={submitForm}>
             <h2 className='text-3xl text-center font-semibold mb-6'>
-              Update Job
+              Update Oportunity
             </h2>
 
             <div className='mb-4'>
@@ -58,7 +58,7 @@ const EditJobPage = ({ updateJobSubmit }) => {
                 htmlFor='type'
                 className='block text-gray-700 font-bold mb-2'
               >
-                Job Type
+                Oportunity Type
               </label>
               <select
                 id='type'
@@ -77,7 +77,7 @@ const EditJobPage = ({ updateJobSubmit }) => {
 
             <div className='mb-4'>
               <label className='block text-gray-700 font-bold mb-2'>
-                Job Listing Name
+                Oportunity Listing Name
               </label>
               <input
                 type='text'
@@ -102,7 +102,7 @@ const EditJobPage = ({ updateJobSubmit }) => {
                 name='description'
                 className='border rounded w-full py-2 px-3'
                 rows='4'
-                placeholder='Add any job duties, expectations, requirements, etc'
+                placeholder='Add any oportunity duties, expectations, requirements, etc'
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
               ></textarea>
@@ -232,7 +232,7 @@ const EditJobPage = ({ updateJobSubmit }) => {
                 className='bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline'
                 type='submit'
               >
-                Update Job
+                Update Oportunity
               </button>
             </div>
           </form>
@@ -241,4 +241,4 @@ const EditJobPage = ({ updateJobSubmit }) => {
     </section>
   );
 };
-export default EditJobPage;
+export default EditOportunityPage;
