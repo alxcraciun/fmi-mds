@@ -17,6 +17,11 @@ Diagramele de flowchart, entitate-relatie și conceptuală pentru baza de date, 
 
 <br />
 
+## Prezentare 
+https://www.canva.com/design/DAGIW28AhWE/3J5LqukDSO_AhZAj7o-Qfg/edit
+
+<br />
+
 ## Tech Stack
 
 ### Frontend
