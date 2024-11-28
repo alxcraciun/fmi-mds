@@ -1,5 +1,7 @@
 # Oportune
 
+> Acesta este repository-ul arhivat cu progresul realizat pentru Oportune prin materia Metode de Dezvoltare Software.  
+
 Platforma Oportune conectează tinerii aflați la început de carieră cu oportunitățile de dezvoltare profesională din România. Astfel, pot găsi internshipuri, stagii de practică, conferințe de networking, joburi entry-level, programe de mentorat, sesiuni de orientare în carieră, târguri de joburi și evenimente tip hackathon pe diferite domenii.
 
 ## Dezvoltarea Software
